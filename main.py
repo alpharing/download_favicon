@@ -12,10 +12,12 @@ def download_favi_xlsx():
     name_list = []
     uri_list = []
 
+    # r[2] field = web site Name in Excel
+    # r[3] field = web site URI in Excel 
     for r in ws.rows:
-        if "http" in str(r[7].value):
+        if "http" in str(r[3].value):
             name_list.append(r[2].value)
-            uri_list.append(r[7].value)
+            uri_list.append(r[3].value)
 
     for i in range(0, len(uri_list)):
 
